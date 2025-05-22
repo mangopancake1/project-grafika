@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, colorchooser
-from shapes import ShapeRenderer
-from transformations import rotate_point_3d
+from objects.base_renderer import ShapeRenderer
+from transformations.rotate import rotate_point_3d
 
 class ShapeAppUI:
     def __init__(self, root):
@@ -42,7 +42,6 @@ class ShapeAppUI:
         self.canvas.bind("<B1-Motion>", self.perform_interactive_drag)
         self.canvas.bind("<ButtonRelease-1>", self.end_interactive_drag)
 
-        # OBJECT FRAME
         self.object_frame = tk.LabelFrame(control_frame, text="OBJECT", padx=5, pady=5)
         self.object_frame.pack(pady=5, fill='x')
 
